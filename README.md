@@ -1,6 +1,6 @@
 # ChateR
-Simple app for making rooms and chatting
-Created to showcase my skills in android development
+Simple app for making rooms and chatting  
+Created to showcase my skills in android development  
 
 ## Main Features
 - User authentication with stored token
