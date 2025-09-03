@@ -1,5 +1,5 @@
 # ChateR
-Simple kotlin android app for making rooms and chatting
+Simple kotlin android app for making rooms and chatting   
 Created to showcase my skills in android development
 
 ## Main Features
