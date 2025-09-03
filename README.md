@@ -1,6 +1,6 @@
 # ChateR
-Simple app for making rooms and chatting  
-Created to showcase my skills in android development  
+Simple kotlin android app for making rooms and chatting   
+Created to showcase my skills in android development
 
 ## Main Features
 - User authentication with stored token
@@ -9,7 +9,7 @@ Created to showcase my skills in android development
 - Send & receive messages
 - User management
 - Simple navigation with Jetpack Compose
-- Basic advertisement manager
+- Advertisement manager
 - Dark theme support
 
 ## Built with
@@ -17,6 +17,8 @@ Created to showcase my skills in android development
 - Jetpack Compose
 - Jetpack Navigation
 - MVVM + Repository
-- Data Store
+- Coroutines & Flow
+- Data Store (Session Manager)
+- AdMob
 - Firebase Firestore
 - Firebase Authentication
