@@ -41,6 +41,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.chater.BuildConfig
 import com.example.chater.Data.Room
 import com.example.chater.R
 import com.example.chater.ViewModels.MessVM
@@ -59,6 +60,8 @@ fun ChatRoomListScreen(
 	val rooms by roomVM.rooms.observeAsState(emptyList())
 	var showDialog by remember { mutableStateOf(false) }
 	var name by remember { mutableStateOf("") }
+
+	val bannerAdId = BuildConfig.AdMobBannerId
 
 	LaunchedEffect(Unit) {
 		roomVM.loadRooms()
@@ -98,15 +101,15 @@ fun ChatRoomListScreen(
 		) { innerPadding ->
 		Column(
 			modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding),
+				.fillMaxSize()
+				.padding(innerPadding),
 			verticalArrangement = Arrangement.SpaceBetween
 		) {
 			Column(
 				modifier = Modifier
-                    .weight(1f)
-                    .fillMaxSize()
-                    .padding(16.dp),
+					.weight(1f)
+					.fillMaxSize()
+					.padding(16.dp),
 			) {
 				LazyColumn(
 					Modifier.weight(1f, fill = false)
@@ -134,9 +137,9 @@ fun ChatRoomListScreen(
 				if(showDialog) {
 					AlertDialog(
 						onDismissRequest = {
-						showDialog = false
-						name = ""
-					},
+							showDialog = false
+							name = ""
+						},
 						title = {
 							Text(
 								"Make a new room",
@@ -150,8 +153,8 @@ fun ChatRoomListScreen(
 								onValueChange = { name = it },
 								singleLine = true,
 								modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(8.dp),
+									.fillMaxWidth()
+									.padding(8.dp),
 								colors = OutlinedTextFieldDefaults.colors(
 									cursorColor = MaterialTheme.colorScheme.secondary,
 									focusedBorderColor = MaterialTheme.colorScheme.secondary
@@ -160,8 +163,8 @@ fun ChatRoomListScreen(
 						}, confirmButton = {
 							Row(
 								modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(8.dp),
+									.fillMaxWidth()
+									.padding(8.dp),
 								horizontalArrangement = Arrangement.SpaceBetween
 							) {
 								Button(
@@ -203,7 +206,7 @@ fun ChatRoomListScreen(
 			) {
 				Ad(
 					modifier = Modifier.fillMaxWidth(),
-					adId = "ca-app-pub-3940256099942544/9214589741"
+					adId = bannerAdId,
 				)
 				Spacer(modifier = Modifier.height(16.dp))
 			}
@@ -215,8 +218,8 @@ fun ChatRoomListScreen(
 fun RoomItem(room: Room, onJoinClicked: (Room) -> Unit) {
 	Row(
 		modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp),
+			.fillMaxWidth()
+			.padding(8.dp),
 		horizontalArrangement = Arrangement.SpaceBetween,
 		verticalAlignment = Alignment.CenterVertically
 	) {

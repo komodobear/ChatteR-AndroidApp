@@ -35,6 +35,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
+import com.example.chater.BuildConfig
 import com.example.chater.ViewModels.LoginVM
 import com.example.chater.Data.Result
 import com.example.chater.ViewModels.AuthVM
@@ -56,6 +57,8 @@ fun LoginScreen(
 	var password by remember { mutableStateOf("") }
 
 	val result by loginVM.authResult.observeAsState()
+
+	val bannerAdId = BuildConfig.AdMobBannerId
 
 	LaunchedEffect(result) {
 		when(val currentResult = result) {
@@ -83,8 +86,8 @@ fun LoginScreen(
 
 	Column(
 		modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
+			.fillMaxSize()
+			.padding(16.dp),
 		verticalArrangement = Arrangement.SpaceBetween,
 		horizontalAlignment = Alignment.CenterHorizontally
 	) {
@@ -117,8 +120,8 @@ fun LoginScreen(
 				onValueChange = { email = it },
 				label = { Text("Email") },
 				modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(8.dp),
+					.fillMaxWidth()
+					.padding(8.dp),
 				colors = OutlinedTextFieldDefaults.colors(
 					cursorColor = MaterialTheme.colorScheme.inversePrimary,
 					focusedBorderColor = MaterialTheme.colorScheme.inversePrimary,
@@ -130,8 +133,8 @@ fun LoginScreen(
 				onValueChange = { password = it },
 				label = { Text("Password") },
 				modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(8.dp),
+					.fillMaxWidth()
+					.padding(8.dp),
 				visualTransformation = PasswordVisualTransformation(),
 				colors = OutlinedTextFieldDefaults.colors(
 					cursorColor = MaterialTheme.colorScheme.inversePrimary,
@@ -144,8 +147,8 @@ fun LoginScreen(
 					loginVM.login(email, password, authVM)
 				},
 				modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(8.dp),
+					.fillMaxWidth()
+					.padding(8.dp),
 				colors = ButtonDefaults.buttonColors(
 					containerColor = MaterialTheme.colorScheme.inversePrimary,
 					contentColor = MaterialTheme.colorScheme.onSecondary
@@ -179,9 +182,9 @@ fun LoginScreen(
 				text = {
 					Column(
 						modifier = Modifier
-                            .fillMaxWidth()
-                            .height(300.dp)
-                            .padding(16.dp),
+							.fillMaxWidth()
+							.height(300.dp)
+							.padding(16.dp),
 						verticalArrangement = Arrangement.SpaceBetween,
 						horizontalAlignment = Alignment.CenterHorizontally
 					) {
@@ -195,8 +198,8 @@ fun LoginScreen(
 								onValueChange = { email = it },
 								label = { Text("Email") },
 								modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(8.dp),
+									.fillMaxWidth()
+									.padding(8.dp),
 								colors = OutlinedTextFieldDefaults.colors(
 									cursorColor = MaterialTheme.colorScheme.inversePrimary,
 									focusedBorderColor = MaterialTheme.colorScheme.inversePrimary,
@@ -208,8 +211,8 @@ fun LoginScreen(
 								onValueChange = { password = it },
 								label = { Text("Password") },
 								modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(8.dp),
+									.fillMaxWidth()
+									.padding(8.dp),
 								visualTransformation = PasswordVisualTransformation(),
 								colors = OutlinedTextFieldDefaults.colors(
 									cursorColor = MaterialTheme.colorScheme.inversePrimary,
@@ -222,8 +225,8 @@ fun LoginScreen(
 								onValueChange = { nick = it },
 								label = { Text("Nick") },
 								modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(8.dp),
+									.fillMaxWidth()
+									.padding(8.dp),
 								colors = OutlinedTextFieldDefaults.colors(
 									cursorColor = MaterialTheme.colorScheme.inversePrimary,
 									focusedBorderColor = MaterialTheme.colorScheme.inversePrimary,
@@ -236,8 +239,8 @@ fun LoginScreen(
 				confirmButton = {
 					Row(
 						modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
+							.fillMaxWidth()
+							.padding(8.dp),
 						horizontalArrangement = Arrangement.SpaceBetween
 					) {
 						Button(
@@ -269,7 +272,7 @@ fun LoginScreen(
 			)
 		}
 
-		Ad(modifier = Modifier.fillMaxWidth(), adId = "ca-app-pub-3940256099942544/9214589741")
+		Ad(modifier = Modifier.fillMaxWidth(), adId = bannerAdId)
 	}
 }
 

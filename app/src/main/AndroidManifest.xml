@@ -18,19 +18,19 @@
         android:label="ChateR"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Firebase1718"
+        android:theme="@style/Theme.ChateR"
         tools:targetApi="31">
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-1919093249929758~1264470428"/>
+            android:value="${appId}"/>
 
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Firebase1718">
+            android:theme="@style/Theme.ChateR">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

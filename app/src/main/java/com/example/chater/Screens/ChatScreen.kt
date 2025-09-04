@@ -67,6 +67,7 @@ import androidx.compose.ui.zIndex
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.chater.AdManager
+import com.example.chater.BuildConfig
 import com.example.chater.Data.Background
 import com.example.chater.Data.Message
 import com.example.chater.Data.allBackgorunds
@@ -119,8 +120,10 @@ fun ChatScreen(
 	val drawerState = rememberDrawerState(DrawerValue.Closed)
 	val scope = rememberCoroutineScope()
 
+	val rewardedAdId = BuildConfig.AdMobRewardedAd
+
 	LaunchedEffect(Unit) {
-		rewardAdManager.loadRewardedAd("ca-app-pub-3940256099942544/5224354917") {
+		rewardAdManager.loadRewardedAd(rewardedAdId) {
 			showAdButton = true
 		}
 	}
@@ -261,7 +264,7 @@ fun ChatScreen(
 												},
 												onAdClosed = {
 													showAdButton = false
-													rewardAdManager.loadRewardedAd("ca-app-pub-3940256099942544/5224354917")
+													rewardAdManager.loadRewardedAd(rewardedAdId)
 												},
 												onAdFailed = {
 													Toast.makeText(
