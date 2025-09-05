@@ -106,7 +106,7 @@ fun LoginScreen(
 					color = MaterialTheme.colorScheme.onBackground
 				)
 				Text(
-					text = " ChateR",
+					text = " ChatteR",
 					fontSize = 30.sp,
 					color = MaterialTheme.colorScheme.onBackground,
 					fontWeight = FontWeight.Bold
