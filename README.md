@@ -1,4 +1,4 @@
-# ChateR
+# ChatteR
 Simple kotlin android app for making rooms and chatting   
 Created to showcase my skills in android development
 
@@ -35,3 +35,7 @@ Created to showcase my skills in android development
   <img src="screenshots/screen_5.jpg" alt="Setting Location" width="250"/>
   <img src="screenshots/screen_6.jpg" alt="Map Screen" width="250"/>
 </p>
+
+## Download
+
+[Download ChatteR APK](https://github.com/komodobear/ChatteR-AndroidApp/releases/latest)
