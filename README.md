@@ -24,6 +24,11 @@ Created to showcase my skills in android development
 - Firebase Firestore
 - Firebase Authentication
 
+## Download
+
+[Download ChatteR APK](https://github.com/komodobear/ChatteR-AndroidApp/releases/latest)
+
+
 ## Screenshots
 <p align="center">
   <img src="screenshots/screen_1.jpg" alt="Main Screen Dark" width="250"/>
@@ -35,7 +40,3 @@ Created to showcase my skills in android development
   <img src="screenshots/screen_5.jpg" alt="Setting Location" width="250"/>
   <img src="screenshots/screen_6.jpg" alt="Map Screen" width="250"/>
 </p>
-
-## Download
-
-[Download ChatteR APK](https://github.com/komodobear/ChatteR-AndroidApp/releases/latest)
