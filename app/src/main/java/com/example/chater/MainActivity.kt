@@ -56,8 +56,6 @@ class MainActivity: ComponentActivity() {
 
 		super.onCreate(savedInstanceState)
 
-		registerFcmToken()
-
 		MobileAds.initialize(this) { status ->
 			Log.d("AdMob", "Initialization status ${status.adapterStatusMap}")
 		}
@@ -74,18 +72,6 @@ class MainActivity: ComponentActivity() {
 					color = MaterialTheme.colorScheme.background
 				) {
 					Navigation(navController, loginVM, authVM)
-				}
-			}
-		}
-	}
-
-	@RequiresApi(Build.VERSION_CODES.O)
-	private fun registerFcmToken() {
-		FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
-			if(task.isSuccessful) {
-				val token = task.result
-				CoroutineScope(Dispatchers.IO).launch {
-					userRepository.updateToken(token)
 				}
 			}
 		}

@@ -14,15 +14,6 @@ class UserRepository(
     private val auth: FirebaseAuth,
     private val firestore: FirebaseFirestore
 ){
-    suspend fun updateToken(token: String): Result<Unit> = try{
-        val userId = Firebase.auth.currentUser?.uid ?: throw Exception("User not logged in")
-        firestore.collection("users").document(userId)
-            .update("tokens", FieldValue.arrayUnion(token)).await()
-        Result.Success(Unit)
-    }catch (e: Exception){
-        Result.Error(e)
-    }
-
     suspend fun signUp(
         email: String, password: String, nick: String): Result<Boolean> =
         try {
