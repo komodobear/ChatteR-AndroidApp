@@ -18,6 +18,7 @@ Created to showcase my skills in android development
 - Jetpack Compose
 - Jetpack Navigation
 - MVVM + Repository
+- Manual dependency injection
 - Coroutines & Flow
 - Data Store (Session Manager)
 - AdMob
